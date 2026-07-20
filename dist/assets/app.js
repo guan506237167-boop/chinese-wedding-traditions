@@ -1,0 +1,3 @@
+﻿function getToolRoot(target){return target?.closest('.hero-tool-card, .container') || document;}
+function buildChecklist(event){const root=getToolRoot(event?.currentTarget);const setting=root.querySelector('#setting').value;const priority=root.querySelector('#priority').value;root.querySelector('#result').innerHTML=`<h3>${setting}</h3><p>Starter checklist: confirm family customs, decide tea ceremony size, prepare red envelopes or gift notes, choose red-gold or ivory accents, and assign one person to explain customs to guests.</p><p><strong>Priority:</strong> ${priority}.</p>`;}
+document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelector('[data-checklist]'); if(b)b.addEventListener('click',buildChecklist);});
